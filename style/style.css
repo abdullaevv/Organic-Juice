@@ -335,15 +335,6 @@ body {
     justify-content: center;
     align-items: center;
 }
-.btn {
-
-}
-.orange__btn {
-
-}
-.orange__nav {
-
-}
 .orange__arrow {
     position: absolute;
 
@@ -358,4 +349,124 @@ body {
 }
 .orange__arrow:active{
     opacity: var(--opacity-active);
+}
+/* FOOTER */
+.wrapper_down {
+    display: grid;
+    /*grid-template-columns: 4.5fr 1.5fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "footer sidebar"; */
+
+    grid-template: "footer sidebar" 1fr / 4.5fr 1.5fr;
+}
+.footer {
+    padding: 80px 80px 10px;
+    grid-area: footer;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.5fr 1fr;
+    grid-template-rows: max-content 90px;
+    grid-template-areas: ". socials form logo" ". . . copy"; 
+    align-items: end;
+
+    /* grid-template: ". socials form logo" max-content ". . . copy" 90px / 1fr 1fr 1.5fr 1fr; */
+    background-color: #2f2f2f;
+    align-content: center;
+    color: var(--white);
+}
+.socials {
+    grid-area: socials;
+    display: flex;
+    gap: 10px;
+}
+.socials_btn {
+    border: 2px solid #fff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(--fade-opacity);
+    
+}
+.socials_btn:hover{
+    opacity: var(--opacity-hover);
+}
+
+.socials_btn:active{
+    opacity: var(--opacity-active);
+}
+.logo-img{
+    justify-self: center;
+}
+.form {
+    grid-area: form;
+    text-transform: uppercase;
+}
+.form__title {
+    font-size: 18px;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+.form__row {
+    display: flex;
+}
+.form__input {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    height: 40px;
+    width: 200px;
+    padding: 0 20px;
+}
+.form__input:focus{
+    background-color: rgb(255, 255, 255);
+}
+.form__submit-btn {
+    background-color: #00C2BA;
+    color: var(--white);
+    height: 40px;
+    padding: 0 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    transition: background-color 0.2s;
+}
+.form__submit-btn:hover{
+    background-color: #00eae0;
+}
+.form__submit-btn:active{
+    background-color: #00aaa3;
+}
+
+.footer__logo{
+    grid-area: logo;
+}
+
+.footer__logo img {
+    height: 60px;
+    /* grid-area: logo; */
+}
+.copy {
+    grid-area: copy;
+    align-self: center;
+    justify-self: center;
+    color:#b4b4b4;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: #00C2BA;
+}
+
+.btn--rounded {
+    border-radius: 20px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+
+}
+.sidebar p + .btn{
+    margin-top: 20px;
 }
